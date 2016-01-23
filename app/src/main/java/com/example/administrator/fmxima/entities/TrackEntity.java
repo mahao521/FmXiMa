@@ -37,6 +37,23 @@ public class TrackEntity {
     private String status;
     private String downloadSize;
     private String downloadAacSize;
+    private String commentsCounts;
+
+    public Boolean getPublic() {
+        return isPublic;
+    }
+
+    public void setPublic(Boolean aPublic) {
+        isPublic = aPublic;
+    }
+
+    public String getCommentsCounts() {
+        return commentsCounts;
+    }
+
+    public void setCommentsCounts(String commentsCounts) {
+        this.commentsCounts = commentsCounts;
+    }
 
     public TrackEntity() {
     }

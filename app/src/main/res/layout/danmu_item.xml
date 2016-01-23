@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="dengxue"
+            type="com.example.administrator.fmxima.entities.TrackEntity"/>
+
+
+        <import type = "android.net.Uri"/>
+        <import type = "android.view.View"/>
+
+    </data>
+
+    <LinearLayout
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewAspectRatio="1"
+                app:placeholderImage="@mipmap/ic_launcher"
+                app:imageURI="@{Uri.parse(dengxue.coverMiddle ?? `` )}"
+                />
+
+            <LinearLayout
+                android:layout_gravity="bottom|left"
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/ic_launcher"
+                    />zz
+
+                <TextView
+                    android:textColor="#f00"
+                    android:gravity="center_vertical"
+                    android:text="@{dengxue.commentsCounts}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:text="@{dengxue.title}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+    </LinearLayout>
+
+</layout>

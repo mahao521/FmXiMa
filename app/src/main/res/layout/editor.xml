@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="wangwu"
+            type="com.example.administrator.fmxima.entities.EditRecommands"/>
+
+        <import type = "android.net.Uri"/>
+        <import type = "android.view.View"/>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:text="@{ wangwu.title }"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:visibility="@{ wangwu.hasMore ? View.VISIBLE : View.GONE}"
+                android:text="更多"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:lidan = "@{wangwu.list[0]}"
+                layout="@layout/edit_item"/>
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:lidan = "@{wangwu.list[1]}"
+                layout="@layout/edit_item"/>
+
+            <include
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                app:lidan = "@{wangwu.list[2]}"
+                layout="@layout/edit_item"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</layout>
+

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="discover"
+            type="com.example.administrator.fmxima.entities.DiscoverEntity"/>
+
+        <import type = "android.net.Uri"/>
+        <import type = "android.view.View"/>
+
+    </data>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            app:placeholderImage="@mipmap/ic_launcher"
+            app:imageURI="@{Uri.parse(discover.coverPath ?? ``)}"
+            app:viewAspectRatio="1"/>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:textSize="20sp"
+                android:textColor="#161515"
+                android:text="@{discover.title}"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="@{discover.subtitle}"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

@@ -30,12 +30,13 @@ public class MyClass {
         discoverEntity.addStringProperty("contentUpdatedAt");
 
         //热门推荐的类
-        final Entity hotRecommendsEntity = schema.addEntity("HotRecommendsEntity");
-        hotRecommendsEntity.addStringProperty("title");
-        hotRecommendsEntity.addStringProperty("contentType");
-        hotRecommendsEntity.addBooleanProperty("isFinished");
-        hotRecommendsEntity.addIntProperty("count");
-        hotRecommendsEntity.addStringProperty("hasMore");
+        final Entity RecommendsEntity = schema.addEntity("RecommendsEntity");
+        RecommendsEntity.addStringProperty("title");
+        RecommendsEntity.addStringProperty("contentType");
+        RecommendsEntity.addBooleanProperty("isFinished");
+        RecommendsEntity.addStringProperty("categoryId");
+        RecommendsEntity.addIntProperty("count");
+        RecommendsEntity.addBooleanProperty("hasMore");
 
 
         //音乐专辑的类
@@ -106,6 +107,8 @@ public class MyClass {
         trackEntity.addStringProperty("downloadSize");
         trackEntity.addStringProperty("downloadAacSize");
 
+        //trackEntity.addStringProperty("commentsCounts");
+
         //focusImage:
         Entity focusImageEntity = schema.addEntity("FocusImageEntity");
         focusImageEntity.addIdProperty();
@@ -119,7 +122,7 @@ public class MyClass {
         focusImageEntity.addStringProperty("is_External_url");
 
 
-        //弹幕
+/*        //弹幕
         Entity bulletAreaEntity = schema.addEntity("BulletAreaEntity");
 
         bulletAreaEntity.addLongProperty("trackId").primaryKey();
@@ -133,7 +136,7 @@ public class MyClass {
         bulletAreaEntity.addStringProperty("favoritesCounts");
         bulletAreaEntity.addStringProperty("playsCounts");
         bulletAreaEntity.addStringProperty("commentsCounts");
-        bulletAreaEntity.addStringProperty("sharesCounts");
+        bulletAreaEntity.addStringProperty("sharesCounts");*/
 
         //精品听单；
         Entity specialColumnEntity = schema.addEntity("SpecialColumnEntity");
@@ -147,7 +150,7 @@ public class MyClass {
         specialColumnEntity.addStringProperty("contentType");
 
         try {
-           new DaoGenerator().generateAll(schema, "app/src/main/java");
+           new DaoGenerator().generateAll(schema, "lib/java-gen");
         } catch (Exception e) {
             e.printStackTrace();
         }

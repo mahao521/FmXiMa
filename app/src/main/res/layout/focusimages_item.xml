@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+<data>
+    <variable
+        name="image"
+        type="com.example.administrator.fmxima.entities.FocusImageEntity"/>
+
+    <import type = "android.net.Uri"/>
+    <import type = "android.view.View"/>
+
+</data>
+
+<com.facebook.drawee.view.SimpleDraweeView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:viewAspectRatio="2.12"
+    app:placeholderImage="@mipmap/ic_launcher"
+    app:imageURI = "@{Uri.parse(image.pic ?? `` )}"/>
+
+</layout>
+

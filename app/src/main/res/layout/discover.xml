@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+      <data>
+          <variable
+              name="newdiscover"
+              type="com.example.administrator.fmxima.entities.Discovers"/>
+      </data>
+
+      <LinearLayout
+          android:layout_marginTop="10dp"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+          <TextView
+              android:text="@{newdiscover.title}"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"/>
+
+          <include
+              app:discover="@{newdiscover.list[0]}"
+              layout="@layout/discover_item"
+              />
+
+          <include
+              app:discover="@{newdiscover.list[1]}"
+              layout="@layout/discover_item"
+              />
+
+          <include
+              app:discover="@{newdiscover.list[2]}"
+              layout="@layout/discover_item"
+              />
+
+          <include
+              app:discover="@{newdiscover.list[3]}"
+              layout="@layout/discover_item"
+              />
+
+      </LinearLayout>
+</layout>

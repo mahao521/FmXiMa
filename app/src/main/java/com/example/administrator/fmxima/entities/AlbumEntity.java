@@ -35,6 +35,39 @@ public class AlbumEntity {
     private String serialState;
     private String playTrackId;
     private Boolean isRecordDesc;
+    private String trackTitle;
+
+    public Boolean getVerified() {
+        return isVerified;
+    }
+
+    public void setVerified(Boolean verified) {
+        isVerified = verified;
+    }
+
+    public Boolean getFavorite() {
+        return isFavorite;
+    }
+
+    public void setFavorite(Boolean favorite) {
+        isFavorite = favorite;
+    }
+
+    public Boolean getRecordDesc() {
+        return isRecordDesc;
+    }
+
+    public void setRecordDesc(Boolean recordDesc) {
+        isRecordDesc = recordDesc;
+    }
+
+    public String getTrackTitle() {
+        return trackTitle;
+    }
+
+    public void setTrackTitle(String trackTitle) {
+        this.trackTitle = trackTitle;
+    }
 
     public AlbumEntity() {
     }

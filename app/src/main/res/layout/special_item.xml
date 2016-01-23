@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="mahao"
+            type="com.example.administrator.fmxima.entities.SpecialColumnEntity"/>
+
+        <import type = "android.net.Uri"/>
+        <import type = "android.view.View"/>
+
+    </data>
+
+    <LinearLayout
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            app:viewAspectRatio="1"
+            app:placeholderImage="@mipmap/ic_launcher"
+            app:imageURI="@{ Uri.parse(mahao.coverPath ?? `` )}"/>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="0dp"
+            android:layout_weight="3"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@{mahao.title}"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@{mahao.subtitle}"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:text="@{mahao.footnote}"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>
+
+
+

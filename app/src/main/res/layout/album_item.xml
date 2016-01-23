@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="album"
+            type="com.example.administrator.fmxima.entities.AlbumEntity"/>
+
+        <import type = "android.net.Uri"/>
+        <import type = "android.view.View"/>
+
+    </data>
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.facebook.drawee.view.SimpleDraweeView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:viewAspectRatio="1"
+                app:placeholderImage="@mipmap/ic_launcher"
+                app:imageURI="@{ Uri.parse(album.coverLarge ?? `` )}"/>
+
+            <TextView
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:textSize="14sp"
+                android:layout_gravity="bottom"
+                android:text="@{ album.title }"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </FrameLayout>
+
+        <TextView
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{album.trackTitle}"/>
+
+    </LinearLayout>
+
+
+
+
+
+
+</layout>
